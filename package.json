@@ -3,10 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "repro": "node reproduce.mjs",
-    "repro:fixed": "node reproduce.mjs --workaround",
-    "check": "vp check vite.config.ts",
-    "check:cdp": "vp lint browser.test.ts --type-aware",
+    "check": "vp check",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

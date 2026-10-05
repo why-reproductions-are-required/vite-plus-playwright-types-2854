@@ -1,13 +1,13 @@
 virtualStoreType: global
 nodeLinker: isolated
 minimumReleaseAgeExclude:
-  - '@voidzero-dev/vite-plus-core@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d'
-  - '@voidzero-dev/vite-plus-darwin-arm64@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d'
-  - '@voidzero-dev/vite-plus-darwin-x64@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d'
-  - '@voidzero-dev/vite-plus-linux-arm64-gnu@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d'
-  - '@voidzero-dev/vite-plus-linux-arm64-musl@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d'
-  - '@voidzero-dev/vite-plus-linux-x64-gnu@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d'
-  - '@voidzero-dev/vite-plus-linux-x64-musl@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d'
-  - '@voidzero-dev/vite-plus-win32-arm64-msvc@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d'
-  - '@voidzero-dev/vite-plus-win32-x64-msvc@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d'
+  - "@voidzero-dev/vite-plus-core@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d"
+  - "@voidzero-dev/vite-plus-darwin-arm64@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d"
+  - "@voidzero-dev/vite-plus-darwin-x64@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d"
+  - "@voidzero-dev/vite-plus-linux-arm64-gnu@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d"
+  - "@voidzero-dev/vite-plus-linux-arm64-musl@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d"
+  - "@voidzero-dev/vite-plus-linux-x64-gnu@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d"
+  - "@voidzero-dev/vite-plus-linux-x64-musl@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d"
+  - "@voidzero-dev/vite-plus-win32-arm64-msvc@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d"
+  - "@voidzero-dev/vite-plus-win32-x64-msvc@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d"
   - vite-plus@0.0.0-commit.5c6ed44f9bba729aa6d8f0df2c6c505d5b05086d

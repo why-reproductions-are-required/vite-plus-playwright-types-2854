@@ -9,7 +9,7 @@ export default defineConfig({
   test: {
     browser: {
       enabled: true,
-      provider: playwright({ contextOptions: { reducedMotion: "bogus" } }),
+      provider: playwright({ contextOptions: { reducedMotion: "reduce" } }),
       instances: [{ browser: "chromium" }],
     },
   },
