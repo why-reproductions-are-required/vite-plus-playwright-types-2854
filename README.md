@@ -2,6 +2,8 @@
 
 Reproduction for [voidzero-dev/vite-plus#2854](https://github.com/voidzero-dev/vite-plus/issues/2854).
 
+[![Reproduce Playwright types issue](https://github.com/why-reproductions-are-required/vite-plus-playwright-types-2854/actions/workflows/reproduce.yml/badge.svg)](https://github.com/why-reproductions-are-required/vite-plus-playwright-types-2854/actions/workflows/reproduce.yml)
+
 `vite-plus` imports `playwright` types in its bundled browser provider declarations but does not declare that dependency or peer. With pnpm's [global virtual store](https://pnpm.io/global-virtual-store), the package cannot resolve those types, even when the project installs Playwright directly.
 
 The project uses the reported versions: `vite-plus@1.0.0`, `@vitest/browser-playwright@5.0.1`, `playwright@1.63.0`, `typescript@7.0.2`, and `pnpm@12.8.1`. The lockfile pins the dependency graph.
@@ -64,3 +66,9 @@ TS2322: Type '"bogus"' is not assignable to type '"no-preference" | "reduce" | n
 `pnpm check:cdp` now passes. `pnpm repro:fixed` asserts these results and exits with `0` when all match.
 
 Verified on macOS arm64 with Node.js `22.23.2` on 2026-10-05, including a fresh install into an empty store outside the project. The install also reports Vite alias peer warnings; both the baseline and workaround have those warnings.
+
+## GitHub Actions
+
+The [workflow](.github/workflows/reproduce.yml) runs on pushes to `main`, pull requests, and manual dispatch. Separate Ubuntu and macOS jobs verify the baseline and the workaround. A green baseline job means that both reported symptoms were reproduced; a green workaround job means that the optional peer restored the expected types.
+
+Each job installs into a fresh store outside the checkout. `PNPM_CONFIG_CI=false` prevents pnpm from disabling the global virtual store in CI. The install still uses `--frozen-lockfile` for the baseline.
