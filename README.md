@@ -69,6 +69,6 @@ Verified on macOS arm64 with Node.js `22.23.2` on 2026-10-05, including a fresh 
 
 ## GitHub Actions
 
-The [workflow](.github/workflows/reproduce.yml) runs on pushes to `main`, pull requests, and manual dispatch. Separate Ubuntu and macOS jobs verify the baseline and the workaround. A green baseline job means that both reported symptoms were reproduced; a green workaround job means that the optional peer restored the expected types.
+The [workflow](.github/workflows/reproduce.yml) runs on pushes to `main`, pull requests, and manual dispatch. Ubuntu and macOS jobs run `pnpm check`, `pnpm typecheck`, and `pnpm check:cdp` directly. The first two commands incorrectly accept `"bogus"`; the CDP lint command reports `no-unsafe-call` and fails the job. CI is expected to be red while this bug is present. It does not use assertions or apply the workaround.
 
-Each job installs into a fresh store outside the checkout. `PNPM_CONFIG_CI=false` prevents pnpm from disabling the global virtual store in CI. The install still uses `--frozen-lockfile` for the baseline.
+Each job installs with `--frozen-lockfile` into a fresh store outside the checkout. `PNPM_CONFIG_CI=false` prevents pnpm from disabling the global virtual store in CI.

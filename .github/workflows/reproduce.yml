@@ -11,14 +11,13 @@ permissions:
 
 jobs:
   reproduce:
-    name: ${{ matrix.os }} / ${{ matrix.scenario }}
+    name: ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest]
-        scenario: [baseline, workaround]
     env:
       # pnpm otherwise disables the global virtual store in CI.
       PNPM_CONFIG_CI: "false"
@@ -41,16 +40,11 @@ jobs:
       - name: Install pinned dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Verify the original bug
-        if: matrix.scenario == 'baseline'
-        run: pnpm repro
+      - name: Check provider options
+        run: pnpm check
 
-      - name: Apply the optional-peer workaround
-        if: matrix.scenario == 'workaround'
-        run: |
-          cp workaround.pnpmfile.mjs .pnpmfile.mjs
-          pnpm install --no-frozen-lockfile --force
+      - name: Typecheck
+        run: pnpm typecheck
 
-      - name: Verify restored Playwright types
-        if: matrix.scenario == 'workaround'
-        run: pnpm repro:fixed
+      - name: Lint the CDP call
+        run: pnpm check:cdp
