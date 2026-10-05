@@ -1,0 +1,22 @@
+{
+  "name": "vite-plus-playwright-types-2854",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "repro": "node reproduce.mjs",
+    "repro:fixed": "node reproduce.mjs --workaround",
+    "check": "vp check vite.config.ts",
+    "check:cdp": "vp lint browser.test.ts --type-aware",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@vitest/browser-playwright": "5.0.1",
+    "playwright": "1.63.0",
+    "typescript": "7.0.2",
+    "vite-plus": "1.0.0"
+  },
+  "engines": {
+    "node": "^22.18.0 || ^24.11.0 || >=26.0.0"
+  },
+  "packageManager": "pnpm@12.8.1"
+}
