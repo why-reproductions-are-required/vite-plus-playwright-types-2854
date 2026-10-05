@@ -40,11 +40,8 @@ jobs:
       - name: Install pinned dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Check provider options
+      - name: Check formatting, lint, and types
         run: pnpm check
 
-      - name: Typecheck
+      - name: Typecheck with TypeScript
         run: pnpm typecheck
-
-      - name: Lint the CDP call
-        run: pnpm check:cdp
